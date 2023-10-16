@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import FeaturedPost from "./Item";
 import { useCart } from "../contexts/CartContext";
 import Spinner from "./Spinner";
-import ResponsiveAppBar from "./AppBar";
+// import ResponsiveAppBar from "./AppBar";
 import Header from "./Header";
 import Review from "./Review";
 

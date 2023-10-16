@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
 import { CartProvider } from "./contexts/CartContext";
 import WebLayout from "./components/WebLayout";
+import SignIn from "./components/Signin";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <AppLayout />,
+      },
+      {
+        path: "/signin",
+        element: <SignIn />,
       },
     ],
   },
