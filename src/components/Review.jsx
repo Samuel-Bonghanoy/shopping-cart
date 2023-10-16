@@ -7,6 +7,11 @@ import { useCart } from "../contexts/CartContext";
 
 export default function Review() {
   const { cart } = useCart();
+  const price = cart.reduce((acc, cur) => {
+    console.log(acc + cur.price);
+    return acc + cur.price;
+  }, 0);
+
   return (
     <div className="px-4 py-3">
       <List>
@@ -21,7 +26,7 @@ export default function Review() {
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+            PHP {String(price)}
           </Typography>
         </ListItem>
       </List>
