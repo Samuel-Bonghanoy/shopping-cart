@@ -1,4 +1,6 @@
 function OrderSummary() {
+  const {cart}
+
   return <div></div>;
 }
 

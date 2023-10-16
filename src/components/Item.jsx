@@ -7,8 +7,11 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Button } from "@mui/material";
+import { useCart } from "../contexts/CartContext";
 
 function FeaturedPost({ item }) {
+  const { cart, setCart } = useCart();
+
   return (
     <Grid
       container
@@ -17,7 +20,7 @@ function FeaturedPost({ item }) {
       className="py-2 px-3 grid"
     >
       <Grid item xs={8} className="pt-3">
-        <CardActionArea component="a" href="#">
+        <CardActionArea component="div" href="#">
           <Card sx={{ display: "flex" }} className="px-3 py-5">
             <CardContent sx={{ flex: 1 }}>
               <Typography component="h2" variant="h5">
@@ -30,7 +33,25 @@ function FeaturedPost({ item }) {
                 {item.description}
               </Typography>
               <Typography variant="subtitle1" color="primary">
-                <Button variant="contained">Add to Cart</Button>
+                {cart.includes(item) ? (
+                  <Button
+                    variant="contained"
+                    onClick={() => {
+                      setCart((c) => c.filter((item) => item != item));
+                    }}
+                  >
+                    Delete from Cart
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    onClick={() => {
+                      setCart((c) => [...c, item]);
+                    }}
+                  >
+                    Add to Cart
+                  </Button>
+                )}
               </Typography>
             </CardContent>
             <CardMedia
