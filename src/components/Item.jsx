@@ -15,7 +15,7 @@ function FeaturedPost({ item }) {
       alignItems="center"
       className="py-2 px-3 grid"
     >
-      <Grid item xs={8} className="">
+      <Grid item xs={8} className="pt-3">
         <CardActionArea component="a" href="#">
           <Card sx={{ display: "flex" }} className="px-3 py-5">
             <CardContent sx={{ flex: 1 }}>
