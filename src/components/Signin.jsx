@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAuth } from "../contexts/authContext";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -37,6 +38,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate();
+
   const { setLoggedIn } = useAuth();
 
   const handleSubmit = (event) => {
@@ -101,7 +104,10 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={() => setLoggedIn((l) => !l)}
+              onClick={() => {
+                setLoggedIn(true);
+                navigate("/");
+              }}
             >
               Sign In
             </Button>
