@@ -27,7 +27,7 @@ function AppLayout() {
           )}
         </Grid>
         <Grid item xs={3} className="bg-gray-300">
-          <p>xs=4</p>
+          <Header options={{ title: "Order Summary" }} />
         </Grid>
       </Grid>
     </>
