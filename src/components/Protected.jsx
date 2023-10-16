@@ -4,7 +4,7 @@ import { useAuth } from "../contexts/authContext"; // Assuming you have an auth 
 function Protected() {
   const { loggedIn } = useAuth(); // You should define this in your auth context
 
-  return loggedIn ? <Outlet /> : <Navigate to="/error" replace />;
+  return loggedIn ? <Outlet /> : <Navigate to="/signin" replace />;
 }
 
 export default Protected;
