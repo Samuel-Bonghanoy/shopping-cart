@@ -6,6 +6,7 @@ import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import { Button } from "@mui/material";
 
 function FeaturedPost({ item }) {
   return (
@@ -29,7 +30,7 @@ function FeaturedPost({ item }) {
                 {item.description}
               </Typography>
               <Typography variant="subtitle1" color="primary">
-                Continue reading...
+                <Button variant="contained">Add to Cart</Button>
               </Typography>
             </CardContent>
             <CardMedia
