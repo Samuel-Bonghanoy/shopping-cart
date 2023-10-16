@@ -11,13 +11,20 @@ function CartProvider({ children }) {
   useEffect(() => {
     async function fetchItems() {
       setIsLoading(true);
-      const res = await axios.get("https://fakestoreapi.com/products?limit=15");
 
-      setItems(res.data);
+      try {
+        const res = await axios.get(
+          "https://fakestoreapi.com/products?limit=15"
+        );
+        setItems(res.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+        setIsLoading(false);
+      }
     }
 
     fetchItems();
-    setIsLoading(false);
   }, []);
 
   console.log(items);
