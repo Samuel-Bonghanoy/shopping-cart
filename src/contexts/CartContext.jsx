@@ -6,31 +6,27 @@ const cartContext = createContext();
 function CartProvider({ children }) {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); // Set initial state to loading
 
   useEffect(() => {
     async function fetchItems() {
-      // setIsLoading(true);
-
       try {
         const res = await axios.get(
           "https://fakestoreapi.com/products?limit=15"
         );
         setItems(res.data);
-        setIsLoading(false);
+        setIsLoading(false); // Set isLoading to false after data is fetched
       } catch (error) {
         console.error("Error fetching data: ", error);
-        setIsLoading(false);
+        setIsLoading(false); // Make sure to handle errors and set isLoading to false in error cases too
       }
     }
 
     fetchItems();
   }, []);
 
-  console.log(items);
-
   return (
-    <cartContext.Provider value={(isLoading, items, setItems, cart, setCart)}>
+    <cartContext.Provider value={{ isLoading, items, setItems, cart, setCart }}>
       {children}
     </cartContext.Provider>
   );
