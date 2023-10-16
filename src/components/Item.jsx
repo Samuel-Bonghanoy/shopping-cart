@@ -37,7 +37,7 @@ function FeaturedPost({ item }) {
                   <Button
                     variant="contained"
                     onClick={() => {
-                      setCart((c) => c.filter((item) => item != item));
+                      setCart((c) => c.filter((i) => i != item));
                     }}
                   >
                     Delete from Cart
