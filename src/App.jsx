@@ -15,16 +15,23 @@ const router = createBrowserRouter([
     element: <SignIn />,
   },
   {
-    element: <Protected />,
+    // element: <Protected />,
+    // children: [
+    //   {
+    //     element: <WebLayout />,
+    //     children: [
+    //       {
+    //         path: "/",
+    //         element: <AppLayout />,
+    //       },
+    //     ],
+    //   },
+    // ],
+    element: <WebLayout />,
     children: [
       {
-        element: <WebLayout />,
-        children: [
-          {
-            path: "/",
-            element: <AppLayout />,
-          },
-        ],
+        path: "/",
+        element: <AppLayout />,
       },
     ],
   },
