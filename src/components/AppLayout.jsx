@@ -4,6 +4,7 @@ import FeaturedPost from "./Item";
 import { useCart } from "../contexts/CartContext";
 import Spinner from "./Spinner";
 import ResponsiveAppBar from "./AppBar";
+import Header from "./Header";
 
 function AppLayout() {
   const { isLoading, items } = useCart();
@@ -13,8 +14,10 @@ function AppLayout() {
   return (
     <>
       <ResponsiveAppBar />
+
       <Grid container spacing={0} className="bg-slate-500 h-content">
         <Grid item xs={9} className="bg-slate-100">
+          <Header />
           {isLoading ? (
             <Spinner />
           ) : items ? (
