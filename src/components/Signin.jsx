@@ -105,7 +105,7 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               onClick={() => {
-                setLoggedIn(true);
+                setLoggedIn(false);
                 navigate("/");
               }}
             >
