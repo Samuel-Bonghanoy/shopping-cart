@@ -4,6 +4,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useCart } from "../contexts/CartContext";
+import { Button } from "@mui/material";
 
 export default function Review() {
   const { cart } = useCart();
@@ -29,6 +30,11 @@ export default function Review() {
             PHP {String(price)}
           </Typography>
         </ListItem>
+        <div className="flex flex-col gap-3 justify-between mt-5">
+          <Button fullWidth variant="contained">
+            Place Order
+          </Button>
+        </div>
       </List>
     </div>
   );
