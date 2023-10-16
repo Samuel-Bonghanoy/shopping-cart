@@ -44,7 +44,9 @@ export default function Review() {
             { label: "Fast Delivery - PHP 300", id: 2 },
           ]}
           sx={{ width: 300 }}
-          renderInput={(params) => <TextField {...params} label="Movie" />}
+          renderInput={(params) => (
+            <TextField {...params} label="Shipping options" />
+          )}
         />
         <Typography
           variant="subtitle1"

@@ -14,7 +14,7 @@ function AppLayout() {
 
   return (
     <>
-      <ResponsiveAppBar />
+      {/* <ResponsiveAppBar /> */}
 
       <Grid container spacing={0} className="bg-slate-500 h-content">
         <Grid item xs={9} className="bg-slate-100">

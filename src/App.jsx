@@ -2,11 +2,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
 import { CartProvider } from "./contexts/CartContext";
+import WebLayout from "./components/WebLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <AppLayout />,
+    element: <WebLayout />,
+    children: [
+      {
+        path: "/",
+        element: <AppLayout />,
+      },
+    ],
   },
 ]);
 
