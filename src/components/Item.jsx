@@ -22,8 +22,8 @@ function FeaturedPost({ item }) {
               <Typography component="h2" variant="h5">
                 {item.title}
               </Typography>
-              <Typography variant="subtitle1" color="text.secondary">
-                {item.price}
+              <Typography variant="subtitle1" className="text-green-700">
+                PHP {item.price}
               </Typography>
               <Typography variant="subtitle1" paragraph>
                 {item.description}
