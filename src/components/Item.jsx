@@ -9,7 +9,7 @@ import CardMedia from "@mui/material/CardMedia";
 
 function FeaturedPost({ item }) {
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12} className="py-2 px-3">
       <CardActionArea component="a" href="#">
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>
@@ -28,7 +28,11 @@ function FeaturedPost({ item }) {
           </CardContent>
           <CardMedia
             component="img"
-            sx={{ width: 160, display: { xs: "none", sm: "block" } }}
+            sx={{
+              width: 160,
+              display: { xs: "none", sm: "block" },
+              objectFit: "contain",
+            }}
             image={item.image}
           />
         </Card>
