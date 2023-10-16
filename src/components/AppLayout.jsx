@@ -7,7 +7,7 @@ function AppLayout() {
     <>
       <Grid container spacing={2} className="bg-slate-500 h-screen">
         <Grid item xs={10} className="bg-slate-500">
-          <FeaturedPost
+          {/* <FeaturedPost
             post={{
               title: "Title of a longer featured blog post",
               description:
@@ -16,7 +16,7 @@ function AppLayout() {
               imageText: "main image description",
               linkText: "Continue reading…",
             }}
-          />
+          /> */}
         </Grid>
         <Grid item xs={2}>
           <p>xs=4</p>
