@@ -1,20 +1,16 @@
 // import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./AppLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-
-    children: [
-      {
-        path: "team",
-      },
-    ],
+    element: <AppLayout />,
   },
 ]);
 
 function App() {
-  return <></>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
