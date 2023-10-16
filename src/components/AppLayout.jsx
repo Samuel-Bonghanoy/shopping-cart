@@ -17,7 +17,7 @@ function AppLayout() {
 
       <Grid container spacing={0} className="bg-slate-500 h-content">
         <Grid item xs={9} className="bg-slate-100">
-          <Header />
+          <Header options={{ title: "Shopping Cart", itemNum: items.length }} />
           {isLoading ? (
             <Spinner />
           ) : items ? (

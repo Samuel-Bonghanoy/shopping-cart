@@ -12,7 +12,7 @@ function CartProvider({ children }) {
     async function fetchItems() {
       try {
         const res = await axios.get(
-          "https://fakestoreapi.com/products?limit=15"
+          "https://fakestoreapi.com/products?limit=13"
         );
         setItems(res.data);
         setIsLoading(false); // Set isLoading to false after data is fetched
