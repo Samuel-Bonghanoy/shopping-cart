@@ -2,8 +2,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
 import { CartProvider } from "./contexts/CartContext";
+
 import WebLayout from "./components/WebLayout";
 import SignIn from "./components/Signin";
+import { AuthProvider } from "./contexts/authContext";
 
 const router = createBrowserRouter([
   {
@@ -23,9 +25,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
