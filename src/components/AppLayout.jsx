@@ -5,6 +5,7 @@ import { useCart } from "../contexts/CartContext";
 import Spinner from "./Spinner";
 import ResponsiveAppBar from "./AppBar";
 import Header from "./Header";
+import Review from "./Review";
 
 function AppLayout() {
   const { isLoading, items } = useCart();
@@ -28,6 +29,7 @@ function AppLayout() {
         </Grid>
         <Grid item xs={3} className="bg-gray-300">
           <Header options={{ title: "Order Summary" }} />
+          <Review />
         </Grid>
       </Grid>
     </>
