@@ -9,7 +9,7 @@ import CardMedia from "@mui/material/CardMedia";
 
 function FeaturedPost({ item }) {
   return (
-    <Grid item xs={12} className="py-2 px-3">
+    <Grid item xs={8} className="py-2 px-3 grid">
       <CardActionArea component="a" href="#">
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>
