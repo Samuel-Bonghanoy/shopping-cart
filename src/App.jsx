@@ -6,10 +6,16 @@ import { CartProvider } from "./contexts/CartContext";
 import WebLayout from "./components/WebLayout";
 import SignIn from "./components/Signin";
 import { AuthProvider } from "./contexts/authContext";
+import Error from "./components/Error";
+import Protected from "./components/Protected";
 
 const router = createBrowserRouter([
   {
+    path: "/signin",
     element: <SignIn />,
+  },
+  {
+    element: <Protected />,
     children: [
       {
         element: <WebLayout />,
@@ -18,13 +24,13 @@ const router = createBrowserRouter([
             path: "/",
             element: <AppLayout />,
           },
-          {
-            path: "/signin",
-            element: <SignIn />,
-          },
         ],
       },
     ],
+  },
+  {
+    path: "/error",
+    element: <Error />,
   },
 ]);
 
