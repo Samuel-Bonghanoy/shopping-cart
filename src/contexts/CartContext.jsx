@@ -6,11 +6,11 @@ const cartContext = createContext();
 function CartProvider({ children }) {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchItems() {
-      setIsLoading(true);
+      // setIsLoading(true);
 
       try {
         const res = await axios.get(

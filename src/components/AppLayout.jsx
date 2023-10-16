@@ -15,8 +15,10 @@ function AppLayout() {
         <Grid item xs={10} className="bg-slate-500">
           {isLoading ? (
             <Spinner />
-          ) : (
+          ) : items ? (
             items.map((item) => <FeaturedPost item={item} key={item.id} />)
+          ) : (
+            <p>No items available.</p>
           )}
         </Grid>
         <Grid item xs={2}>
