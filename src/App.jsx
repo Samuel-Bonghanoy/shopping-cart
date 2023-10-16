@@ -9,15 +9,20 @@ import { AuthProvider } from "./contexts/authContext";
 
 const router = createBrowserRouter([
   {
-    element: <WebLayout />,
+    element: <SignIn />,
     children: [
       {
-        path: "/",
-        element: <AppLayout />,
-      },
-      {
-        path: "/signin",
-        element: <SignIn />,
+        element: <WebLayout />,
+        children: [
+          {
+            path: "/",
+            element: <AppLayout />,
+          },
+          {
+            path: "/signin",
+            element: <SignIn />,
+          },
+        ],
       },
     ],
   },
