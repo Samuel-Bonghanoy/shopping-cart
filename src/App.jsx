@@ -6,7 +6,7 @@ import { CartProvider } from "./contexts/CartContext";
 import WebLayout from "./components/WebLayout";
 import SignIn from "./components/Signin";
 import { AuthProvider } from "./contexts/authContext";
-// import Error from "./components/Error";
+import Error from "./components/Error";
 import Protected from "./components/Protected";
 
 const router = createBrowserRouter([
@@ -15,30 +15,23 @@ const router = createBrowserRouter([
     element: <SignIn />,
   },
   {
-    // element: <Protected />,
-    // children: [
-    //   {
-    //     element: <WebLayout />,
-    //     children: [
-    //       {
-    //         path: "/",
-    //         element: <AppLayout />,
-    //       },
-    //     ],
-    //   },
-    // ],
-    element: <WebLayout />,
+    element: <Protected />,
     children: [
       {
-        path: "/",
-        element: <AppLayout />,
+        element: <WebLayout />,
+        children: [
+          {
+            path: "/",
+            element: <AppLayout />,
+          },
+        ],
       },
     ],
   },
-  // {
-  //   path: "/error",
-  //   element: <Error />,
-  // },
+  {
+    path: "/error",
+    element: <Error />,
+  },
 ]);
 
 function App() {
